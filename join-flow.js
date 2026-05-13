@@ -59,8 +59,10 @@
     input.type = step.type || "text";
     input.placeholder = step.placeholder;
     input.value = "";
+    input.hidden = false;
     error.textContent = "";
     submit.textContent = step.button;
+    submit.hidden = false;
   }
 
   function openFlow() {
@@ -74,6 +76,16 @@
 
   function closeFlow() {
     backdrop.hidden = true;
+  }
+
+  function showReceived() {
+    title.textContent = "Received.";
+    subtitle.textContent = "";
+    subtitle.hidden = true;
+    input.value = "";
+    input.hidden = true;
+    error.textContent = "";
+    submit.hidden = true;
   }
 
   function normalize(value) {
@@ -95,7 +107,7 @@
       })
     }).then(function (response) {
       if (!response.ok) throw new Error("Submission failed.");
-      closeFlow();
+      showReceived();
     }).catch(function () {
       error.textContent = "Wrong. Try again.";
     }).finally(function () {
