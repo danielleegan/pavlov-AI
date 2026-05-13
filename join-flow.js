@@ -55,6 +55,7 @@
     }
 
     title.textContent = step.title;
+    title.classList.remove("is-received");
     subtitle.textContent = step.subtitle;
     subtitle.hidden = !step.subtitle;
     input.type = step.type || "text";
@@ -81,6 +82,7 @@
 
   function showReceived() {
     title.textContent = "Received.";
+    title.classList.add("is-received");
     subtitle.textContent = "";
     subtitle.hidden = true;
     input.value = "";

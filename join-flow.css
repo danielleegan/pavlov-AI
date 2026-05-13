@@ -34,6 +34,10 @@
   margin: 0;
 }
 
+.join-flow-title.is-received {
+  color: #FF0000;
+}
+
 .join-flow-subtitle {
   color: rgba(255, 255, 255, 0.9);
   font-family: "SUSE", sans-serif;
