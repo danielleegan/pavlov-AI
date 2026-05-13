@@ -12,6 +12,7 @@
   var error = backdrop.querySelector(".join-flow-error");
   var submit = backdrop.querySelector(".join-flow-submit");
   var stepIndex = 0;
+  var waitlistUrl = "/waitlist";
 
   var steps = [
     {
@@ -79,6 +80,29 @@
     return value.replace(/\s+/g, " ").trim().toLowerCase();
   }
 
+  function submitEmail() {
+    var email = input.value.trim();
+
+    submit.disabled = true;
+
+    fetch(waitlistUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email
+      })
+    }).then(function (response) {
+      if (!response.ok) throw new Error("Submission failed.");
+      closeFlow();
+    }).catch(function () {
+      error.textContent = "Wrong. Try again.";
+    }).finally(function () {
+      submit.disabled = false;
+    });
+  }
+
   function submitStep() {
     var step = steps[stepIndex];
 
@@ -86,7 +110,7 @@
 
     if (step.type === "email") {
       if (input.validity.valid && input.value.trim() !== "") {
-        closeFlow();
+        submitEmail();
         return;
       }
 
