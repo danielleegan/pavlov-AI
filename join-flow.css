@@ -26,11 +26,9 @@
 }
 
 .join-flow-dialog.is-received {
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  display: grid;
   min-height: 9rem;
-  padding: 3.25rem 2rem 1.25rem;
+  place-items: center;
 }
 
 .join-flow-title {
@@ -47,7 +45,10 @@
   transform: none;
 }
 
-.join-flow-dialog.is-received .join-flow-error {
+.join-flow-dialog.is-received .join-flow-subtitle,
+.join-flow-dialog.is-received .join-flow-input,
+.join-flow-dialog.is-received .join-flow-error,
+.join-flow-dialog.is-received .join-flow-submit {
   display: none;
 }
 
