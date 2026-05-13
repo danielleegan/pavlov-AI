@@ -101,6 +101,7 @@
     var email = input.value.trim();
 
     submit.disabled = true;
+    error.textContent = "Submitting...";
 
     fetch(waitlistUrl, {
       method: "POST",
