@@ -13,7 +13,6 @@
   var submit = backdrop.querySelector(".join-flow-submit");
   var stepIndex = 0;
   var waitlistUrl = "/waitlist";
-  var firstStepIndex = 3;
 
   var steps = [
     {
@@ -69,7 +68,7 @@
   }
 
   function openFlow() {
-    stepIndex = firstStepIndex;
+    stepIndex = 0;
     renderStep();
     backdrop.hidden = false;
     window.setTimeout(function () {
