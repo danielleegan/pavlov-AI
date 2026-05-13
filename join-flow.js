@@ -54,6 +54,7 @@
       return;
     }
 
+    dialog.classList.remove("is-received");
     title.textContent = step.title;
     title.classList.remove("is-received");
     subtitle.textContent = step.subtitle;
@@ -81,6 +82,7 @@
   }
 
   function showReceived() {
+    dialog.classList.add("is-received");
     title.textContent = "Received.";
     title.classList.add("is-received");
     subtitle.textContent = "";

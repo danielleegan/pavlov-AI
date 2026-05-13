@@ -25,6 +25,13 @@
   width: min(100%, 28rem);
 }
 
+.join-flow-dialog.is-received {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 9rem;
+}
+
 .join-flow-title {
   color: #ffffff;
   font-family: "Syncopate", sans-serif;
@@ -36,6 +43,10 @@
 
 .join-flow-title.is-received {
   color: #FF0000;
+}
+
+.join-flow-dialog.is-received .join-flow-error {
+  display: none;
 }
 
 .join-flow-subtitle {
