@@ -43,6 +43,7 @@
 
 .join-flow-title.is-received {
   color: #FF0000;
+  transform: translateY(0.35rem);
 }
 
 .join-flow-dialog.is-received .join-flow-error {
