@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   min-height: 9rem;
+  padding: 3.25rem 2rem 1.25rem;
 }
 
 .join-flow-title {
@@ -43,7 +44,7 @@
 
 .join-flow-title.is-received {
   color: #FF0000;
-  transform: translateY(0.35rem);
+  transform: none;
 }
 
 .join-flow-dialog.is-received .join-flow-error {
